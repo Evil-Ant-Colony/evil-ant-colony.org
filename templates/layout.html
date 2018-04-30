@@ -1,0 +1,49 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.css" type="text/css">
+<link rel="stylesheet" href="{{ '/static/style.css'|url }}">
+<title>{% block title %}Welcome{% endblock %} — Evil Ant Colony</title>
+<body>
+  <header>
+    {% set root = site.get('/') %}
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <input id="navbar-toggle-cbox" role="button" type="checkbox">
+        <div class="navbar-header">
+          <a href="/" class="navbar-brand">Evil Home</a>
+          <label class="navbar-toggle collapsed" for="navbar-toggle-cbox">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </label>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-main">
+          <ul class="nav navbar-nav">
+            {% for child in root.children %}
+            {% if child.children %}
+              <li class="dropdown">
+                <a href="{{ child|url}}">{{ child.title }}<span class="caret"></span></a>
+                <ul class="dropdown-menu" >
+                  {% for sub in child.children %}
+                    <li><a href="{{ sub|url }}">{{ sub.title }}</a></li>
+                  {% endfor %}
+                </ul>
+              </li>
+            {% else %}
+              <li><a href="{{ child|url }}">{{ child.title }}</a></li>
+            {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="page">
+    {% block body %}{% endblock %}
+  </div>
+  <footer>
+    &copy; Copyright 2018 by Evil Ant Colony.
+  </footer>
+</body>

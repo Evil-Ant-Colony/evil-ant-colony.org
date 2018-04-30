@@ -1,0 +1,60 @@
+body {
+    font-family: 'Verdana', sans-serif;
+}
+
+header, footer, div.page {
+    margin: 0 auto;
+    padding: 20px 30px;
+}
+
+header h1 {
+    margin: 0;
+    font-weight: normal;
+    font-size: 42px;
+}
+
+header {
+    background-image: url('/images/banner.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 140px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: -100px;
+    padding: 0;
+    padding-top: 100px;
+}
+
+/* --------------------- */
+
+.dropdown:hover > .dropdown-menu {
+    display: block;
+}
+
+label[for=navbar-toggle-cbox] {
+    cursor: pointer;
+}
+
+#navbar-toggle-cbox:checked ~ .collapse {
+    display: block;
+}
+
+#navbar-toggle-cbox {
+    display: none;
+}
+
+@media screen and (max-width: 767px) {
+    header {
+        background-size: length;
+        background-position: top;
+    }
+    .dropdown-menu {
+        z-index: 0;
+        float: none;
+        left: auto;
+        top: auto;
+        position: relative;
+        display: block;
+    }
+}
