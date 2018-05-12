@@ -1,0 +1,3 @@
+[submodule "packages/xonotic-support"]
+	path = packages/xonotic-support
+	url = https://github.com/Evil-Ant-Colony/lektor-xonotic-support.git

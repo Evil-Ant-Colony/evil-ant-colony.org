@@ -7,6 +7,10 @@ header, footer, div.page {
     padding: 20px 30px;
 }
 
+div.page, footer {
+    max-width: 1280px;
+}
+
 header h1 {
     margin: 0;
     font-weight: normal;
@@ -25,8 +29,6 @@ header {
     padding: 0;
     padding-top: 100px;
 }
-
-/* --------------------- */
 
 .dropdown:hover > .dropdown-menu {
     display: block;
@@ -56,5 +58,40 @@ label[for=navbar-toggle-cbox] {
         top: auto;
         position: relative;
         display: block;
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+.column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+}
+
+.row {
+    background-color: #eee;
+    max-width: 1024px;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.mapshot {
+    border: 1px solid black;
+    max-width: 90%;
+    max-height: 200px;
+}
+
+@media screen and (max-width: 767px) {
+    .column {
+        width: 100%;
+    }
+    .mapshot {
+        max-width: 90%;
     }
 }

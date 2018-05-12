@@ -1,0 +1,15 @@
+{% macro render_mapinfo(mapname, pk3=None, source_url=None) %}
+  {% set info = get_mapinfo(mapname, pk3=pk3) %}
+  <h2>{{ info.name }}</h2>
+  <div class="row">
+    <div class="column" align="center">
+      <img class="mapshot" src="/images/mapshots/{{ mapname }}.jpg" onerror="this.src='/images/noscreenshot.svg'"/>
+    </div>
+    <div class="column">
+      <p>Author: {{ info.author }}</p>
+      {% if info.description %}<p>Description: {{ info.description }}</p>{% endif %}
+      <p>Gamemodes: {% for mode in info.gametypes %}{{ mode }} {% endfor %}</p>
+      {% if source_url %}<p>Sources: <a href="{{ source_url }}">{{ source_url }}</a></p>{% endif %}
+    </div>
+  </div>
+{% endmacro %}

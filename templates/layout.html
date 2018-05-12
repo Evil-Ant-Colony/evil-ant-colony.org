@@ -21,7 +21,7 @@
         <div class="navbar-collapse collapse" id="navbar-main">
           <ul class="nav navbar-nav">
             {% for child in root.children %}
-            {% if child.children %}
+            {% if child.children.filter(F._model != "mappage") %}
               <li class="dropdown">
                 <a href="{{ child|url}}">{{ child.title }}<span class="caret"></span></a>
                 <ul class="dropdown-menu" >

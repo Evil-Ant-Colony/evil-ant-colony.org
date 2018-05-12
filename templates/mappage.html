@@ -1,0 +1,6 @@
+{% extends "layout.html" %}
+{% block title %}{{ this.title }}{% endblock %}
+{% block body %}
+  {% from "macros/mapinfo.html" import render_mapinfo %}
+  {{ render_mapinfo(this.name, pk3=this.pk3, source_url=this.source_url) }}
+{% endblock %}

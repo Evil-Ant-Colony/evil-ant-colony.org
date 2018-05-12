@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block title %}{{ this.title }}{% endblock %}
+{% block body %}
+  <h1>{{ this.title }}</h1>
+  {{ this.body }}
+  {% for child in this.pagination.items %}
+    {% from "macros/mapinfo.html" import render_mapinfo %}
+    {{ render_mapinfo(child.name, pk3=child.pk3, source_url=child.source_url) }}
+  {% endfor %}
+  {% from "macros/pagination.html" import render_pagination %}
+  {% if this.pagination.pages > 1 %}
+    {{ render_pagination(this.pagination) }}
+  {% endif %}
+{% endblock %}
