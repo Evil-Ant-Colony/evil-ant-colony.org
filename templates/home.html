@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block title %}{{ this.title }}{% endblock %}
+{% block scripts %}
+  <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+  <script src="{{ '/js/xonotic-server.js'|url }}"></script>
+{% endblock %}
+{% block body %}
+  <h2>{{ this.title }}</h2>
+  <div class="row">
+    <div class="column">
+      {{ this.body }}
+    </div>
+    <div class="column" align="center">
+      <h4>Server overview</h4>
+      <table>
+        {% set servers=[] %}
+        {% for page in site.query("/servers") %}
+        {{ servers.append([page._slug, page.address]) or "" }}
+        <tr><td>{{ page.title }}</td><td id="status-{{ page._slug }}">-</td></tr>
+        {% endfor %}
+      </table>
+    </div>
+  </div>
+  <script>populateServerOverview({{ servers|safe }})</script>
+{% endblock %}

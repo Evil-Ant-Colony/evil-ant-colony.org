@@ -56,41 +56,66 @@ function extractInfo(xmldata) {
 }
 
 
-function populateServerPage(address) {
+function getServerinfo(address, callback, extradata) {
     $.ajax({
         type: 'GET',
+//         url: 'qstat.xml',
         url: request_url + address,
         dataType: 'xml',
         cache: true,
-        success: function(data){
+        success: function (data) {
             let info = extractInfo(data);
             if (info["address"] != address) {
                 console.error("Response for wrong server " + info["address"]);
                 return;
             };
-            if (info["status"] !== "UP") {
-                $('#mapshot').attr("src", "/images/offline.svg");
-                return;
-            };
-            let map = info["map"];
-            $('#mapshot').bind('error', function(err) {
-                $(this).attr("src", "/images/noscreenshot.svg");
-            }).attr("src", mapshot_dir + map + mapshot_suffix);
-            $('#mapname').text(map);
-            $('#gametype').text(info["gametype"]);
-            $('#player_overview').text(info.numplayers + "/" + info.maxplayers);
-            $('#player_table').empty();
-            for (let player of info.players) {
-                let row = "<tr>";
-                for (let field of playerfields) {
-                    row += "<td>" + player[field] + "</td>";
-                }
-                row += "</tr>"
-                $('#player_table').last().append(row);
-            };
+            callback(info, extradata);
         },
         error: function(data){
             console.log("Error loading XML data");
         }
     });
+}
+
+
+function populateServerPage(address) {
+    function _populateServerPage(info, extrainfo) {
+        if (info["status"] !== "UP") {
+            $('#mapshot').attr("src", "/images/offline.svg");
+            return;
+        };
+        let map = info["map"];
+        $('#mapshot').bind('error', function(err) {
+            $(this).attr("src", "/images/noscreenshot.svg");
+        }).attr("src", mapshot_dir + map + mapshot_suffix);
+        $('#mapname').text(map);
+        $('#gametype').text(info["gametype"]);
+        $('#player_overview').text(info.numplayers + "/" + info.maxplayers);
+        $('#player_table').empty();
+        for (let player of info.players) {
+            let row = "<tr>";
+            for (let field of playerfields) {
+                row += "<td>" + player[field] + "</td>";
+            }
+            row += "</tr>"
+            $('#player_table').last().append(row);
+        };
+    };
+    getServerinfo(address, _populateServerPage, undefined);
+}
+
+
+function populateServerOverview(servers) {
+    function _populateRow(info, id) {
+        if (info["status"] !== "UP") {
+            $('#status-'+id).html('<span style="color:red;">Currently Offline</span>');
+            return;
+        }
+        $('#status-'+id).text(info["numplayers"] + "/" + info["maxplayers"]);
+    };
+    for (let server of servers) {
+        let identifier = server[0];
+        let address = server[1];
+        getServerinfo(address, _populateRow, identifier);
+    };
 }
