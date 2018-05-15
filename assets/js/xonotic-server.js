@@ -29,7 +29,8 @@ function extractInfo(xmldata) {
         return {"address": address, "status": status};
     }
     let map = escapeHTML(server.find("map").text());
-    let numplayers = Number(server.find("numplayers").text());
+    let bot_number = Number(server.find("rules>rule[name=bots]").text())
+    let numplayers = Number(server.find("numplayers").text()) - bot_number;
     let maxplayers = Number(server.find("maxplayers").text());
     let gametype = escapeHTML(server.find("rules>rule[name=qcstatus]").text().split(":", 1)[0]);
     let players = [];
@@ -59,7 +60,6 @@ function extractInfo(xmldata) {
 function getServerinfo(address, callback, extradata) {
     $.ajax({
         type: 'GET',
-//         url: 'qstat.xml',
         url: request_url + address,
         dataType: 'xml',
         cache: true,
