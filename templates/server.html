@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block title %}{{ this.title }}{% endblock %}
+{% block scripts %}
+  <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+  <script src="{{ '/js/xonotic-server.js'|url }}"></script>
+{% endblock %}
+{% block body %}
+  <h2>{{ this.title }}</h2>
+  {{ this.body }}
+  <div class="row">
+    <div class="column" align="center">
+      <img class="mapshot" id="mapshot" src="{{ '/images/noscreenshot.svg'|url }}"/>
+      <p>Map: <span id="mapname">-</span></p>
+    </div>
+    <div class="column">
+      <p>Gametype: <span id="gametype">-</span></p>
+      <p>Players: <span id="player_overview">0/0</span></p>
+      <table>
+        <thead>
+          <tr><th>Name</th><th>Ping</th><th>Score</th><th>Team</th></tr>
+        </thead>
+        <tbody id="player_table">
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <script>populateServerPage("{{ this.address }}")</script>
+{% endblock %}

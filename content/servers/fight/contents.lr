@@ -1,5 +1,9 @@
+_model: server
+---
 title: Tournament Server
 ---
 sort_key: 20
+---
+address: evil-ant-colony.org:26005
 ---
 body: TODO

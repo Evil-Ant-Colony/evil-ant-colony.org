@@ -1,5 +1,9 @@
+_model: server
+---
 title: Duel Server
 ---
 sort_key: 10
+---
+address: evil-ant-colony.org:26002
 ---
 body: TODO

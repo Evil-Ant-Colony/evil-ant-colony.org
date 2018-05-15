@@ -1,5 +1,9 @@
+_model: server
+---
 title: CTF Server
 ---
 sort_key: 0
+---
+address: evil-ant-colony.org:26000
 ---
 body: TODO

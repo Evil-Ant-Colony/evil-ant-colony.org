@@ -1,5 +1,9 @@
+_model: server
+---
 title: Votable Server
 ---
 sort_key: 30
+---
+address: evil-ant-colony.org:26006
 ---
 body: TODO

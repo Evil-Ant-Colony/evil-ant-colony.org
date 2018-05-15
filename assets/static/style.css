@@ -95,3 +95,14 @@ label[for=navbar-toggle-cbox] {
         max-width: 90%;
     }
 }
+
+table {
+    width: 95%;
+    background-color: #aaa;
+}
+td {
+    padding: 5px;
+}
+table, th, td {
+    border: 1px solid black;
+}
