@@ -22,12 +22,12 @@ header {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 140px;
+    height: 230px;
     position: -webkit-sticky;
     position: sticky;
-    top: -100px;
+    top: -190px;
     padding: 0;
-    padding-top: 100px;
+    padding-top: 190px;
 }
 
 .dropdown:hover > .dropdown-menu {
