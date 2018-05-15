@@ -16,7 +16,7 @@
         {% set servers=[] %}
         {% for page in site.query("/servers") %}
         {{ servers.append([page._slug, page.address]) or "" }}
-        <tr><td>{{ page.title }}</td><td id="status-{{ page._slug }}">-</td></tr>
+        <tr><td style="width:75%">{{ page.title }}</td><td id="status-{{ page._slug }}" style="width:25%">-</td></tr>
         {% endfor %}
       </table>
     </div>
