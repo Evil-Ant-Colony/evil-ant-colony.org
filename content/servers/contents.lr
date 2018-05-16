@@ -1,5 +1,26 @@
-title: Servers
+title: Xonotic Servers
 ---
 sort_key: 10
 ---
-body: TODO
+body:
+
+Our Xonotic servers are so awesome! ^^
+
+- [CTF Server](ctf)
+- [Duel Server](duel)
+- [Tournament Server](fight)
+- [Votable Server](votable)
+
+##Server Rules
+The [server admins](/contact) reserve the right to ban anyone without prior warning if found to break any of the rules or have a negative effect on the game or the players.
+
+1.Spammers and trolls are not tolerated
+2. Clients modified in a way that allows abuse or give an advantage over other players are not allowed
+3. Running scripts that use server resources without prior permission is not allowed
+4. Trying to circumvent a ban has the effect of prolonging the ban time (or even make it permanent and irrevocable)
+5. Insulting the admins (or other people in general) might cause a ban
+6. Intentionally disrupting the gameplay is not allowed
+7. Impersonating admins or pretending to be affiliated to the EAC clan is not permitted
+If you feel you have been unjustly banned you can talk to us on IRC ([see out contact page](/contact) but remember that the right to play in these server is granted by the admins and it’s their final decision whether to let someone play or not.
+
+The above rules apply to all of the services available through EAC (including but not limited to xonotic servers, IRC channels, web resources and mumble).

@@ -6,4 +6,6 @@ sort_key: 0
 ---
 address: evil-ant-colony.org:26000
 ---
-body: TODO
+body:
+
+Capture the flag with instagib & hook.

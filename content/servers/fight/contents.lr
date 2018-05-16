@@ -6,4 +6,6 @@ sort_key: 20
 ---
 address: evil-ant-colony.org:26005
 ---
-body: TODO
+body:
+
+Tournament server with a big variety of gametypes, mutators and balances for competitive play.

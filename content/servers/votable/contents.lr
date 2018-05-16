@@ -6,4 +6,6 @@ sort_key: 30
 ---
 address: evil-ant-colony.org:26006
 ---
-body: TODO
+body:
+
+Server with a big variety of gametypes and mutators for casual play.

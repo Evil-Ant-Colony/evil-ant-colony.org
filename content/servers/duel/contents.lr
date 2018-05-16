@@ -6,4 +6,6 @@ sort_key: 10
 ---
 address: evil-ant-colony.org:26002
 ---
-body: TODO
+body:
+
+Duel deathmatch server that supports Vanilla, Instagib, Overkill and more.
