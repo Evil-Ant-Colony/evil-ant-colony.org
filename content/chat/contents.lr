@@ -1,0 +1,9 @@
+_discoverable: False
+---
+title: EAChat
+---
+sort_key: 100
+---
+body:
+
+<iframe src="https://webchat.quakenet.org/?channels=evil.ant.colony%2Ceac.xonotic&uio=d4" width="100%" height="600px"/>
