@@ -6,10 +6,12 @@
       <img class="mapshot" src="/images/mapshots/{{ mapname }}.jpg" onerror="this.src='/images/noscreenshot.svg'"/>
     </div>
     <div class="column">
-      <p>Author: {{ info.author }}</p>
-      {% if info.description %}<p>Description: {{ info.description }}</p>{% endif %}
-      <p>Gamemodes: {% for mode in info.gametypes %}{{ mode }} {% endfor %}</p>
-      {% if source_url %}<p>Sources: <a href="{{ source_url }}">{{ source_url }}</a></p>{% endif %}
+      <table>
+        <tr><td width=25%>Author</td><td width=75%>{{ info.author }}</td></tr>
+        {% if info.description %}<tr><td width=25%>Description</td><td width=75%>{{ info.description }}</td></tr>{% endif %}
+        <tr><td width=25%>Gamemodes</td><td width=75%>{% for mode in info.gametypes %}{{ mode }} {% endfor %}</td></tr>
+        {% if source_url %}<tr><td width=25%>Sources</td><td width=75%><a href="{{ source_url }}">{{ source_url }}</a></td></tr>{% endif %}
+      </table>
     </div>
   </div>
 {% endmacro %}
