@@ -12,7 +12,7 @@
     </div>
     <div class="column" align="center">
       <h4>Server overview</h4>
-      <table>
+      <table class="server_overview">
         {% set servers=[] %}
         {% for page in site.query("/servers") %}
         {{ servers.append([page._slug, page.address]) or "" }}

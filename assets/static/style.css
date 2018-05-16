@@ -1,5 +1,5 @@
 body {
-    font-family: 'Verdana', sans-serif;
+    font-family: Helvetica, sans-serif;
 }
 
 header, footer, div.page {
@@ -13,7 +13,6 @@ div.page, footer {
 
 header h1 {
     margin: 0;
-    font-weight: normal;
     font-size: 42px;
 }
 
@@ -61,6 +60,14 @@ label[for=navbar-toggle-cbox] {
     }
 }
 
+h1, h2, h3 {
+    padding: 10px;
+}
+
+p {
+    padding: 10px;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -71,7 +78,6 @@ label[for=navbar-toggle-cbox] {
 }
 
 .row {
-    background-color: #eee;
     max-width: 1024px;
 }
 
@@ -82,7 +88,6 @@ label[for=navbar-toggle-cbox] {
 }
 
 .mapshot {
-    border: 1px solid black;
     max-width: 90%;
     max-height: 200px;
 }
@@ -97,12 +102,66 @@ label[for=navbar-toggle-cbox] {
 }
 
 table {
+    padding: 10px;
     width: 95%;
-    background-color: #aaa;
 }
+
 td {
     padding: 5px;
+    vertical-align: top;
 }
-table, th, td {
-    border: 1px solid black;
+
+table.players th, table.players td, table.server_overview td {
+    border: black solid 1px;
+}
+
+/* colors */
+body {
+    color: #999;
+    background-color: #20262b;
+}
+
+.navbar-default, footer {
+    background-color: #101317;
+    border-color: #101317;
+}
+
+.navbar-default .navbar-nav > li > a, .navbar-default .navbar-brand {
+    color: #c2c2c2;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-brand:hover {
+    color: #f7f7ff;
+}
+
+.navbar-default .navbar-toggle {
+    background-color: #27292b;
+    border-color: #5c5e60;
+}
+
+.navbar-default .navbar-toggle:hover {
+    background-color: #27292b;
+    border-color: #5c5e60;
+}
+
+.dropdown-menu {
+    background-color: #0b0f13;
+}
+
+.dropdown-menu > li > a {
+    color: #c2c2c2;
+}
+
+.dropdown-menu > li > a:hover {
+    color: #f7f7ff;
+    background-color: #20262b;
+}
+
+.row {
+    background-color: #1c2125;
+}
+
+a {
+    color: #71a4d0;
 }
