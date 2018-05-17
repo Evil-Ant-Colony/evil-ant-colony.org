@@ -8,3 +8,8 @@ Build
 2. reinstall plugins with ```lektor plugins reinstall```
 3. adjust ```configs/xonotic-support.ini```
 4. ```lektor build```
+
+License
+-------
+MIT, see License
+
