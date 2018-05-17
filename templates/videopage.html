@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block title %}{{ this.title }}{% endblock %}
+{% block body %}
+  <h1>{{ this.title }}</h1>
+  {% from "macros/videoblock.html" import videoblock %}
+  {% for item in this.attachments.filter(F._model=="video") %}
+    {{ videoblock(item) }}
+    <p></p>
+  {% endfor %}
+{% endblock %}

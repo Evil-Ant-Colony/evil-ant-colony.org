@@ -1,0 +1,14 @@
+{% macro videoblock(video) %}
+  <div class="row">
+    <div class="column">
+      <h3>{{ video.title }}</h3>
+      <p>{{ video.description }}</p>
+    </div>
+    <div class="column">
+      <video width="100%" controls>
+        <source src="{{ video|url }}">
+        Your browser does not support html5 video.
+      </video>
+    </div>
+  </div>
+{% endmacro %}
