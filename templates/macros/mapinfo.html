@@ -7,10 +7,10 @@
     </div>
     <div class="column">
       <table>
-        <tr><td width=25%>Author</td><td width=75%>{{ info.author }}</td></tr>
-        {% if info.description %}<tr><td width=25%>Description</td><td width=75%>{{ info.description }}</td></tr>{% endif %}
-        <tr><td width=25%>Gamemodes</td><td width=75%>{% for mode in info.gametypes %}{{ mode }} {% endfor %}</td></tr>
-        {% if source_url %}<tr><td width=25%>Sources</td><td width=75%><a href="{{ source_url }}">{{ source_url }}</a></td></tr>{% endif %}
+        <tr><td style="width:25%">Author</td><td style="width:75%">{{ info.author }}</td></tr>
+        {% if info.description %}<tr><td style="width:25%">Description</td><td style="width:75%">{{ info.description }}</td></tr>{% endif %}
+        <tr><td style="width:25%">Gamemodes</td><td style="width:75%">{% for mode in info.gametypes %}{{ mode }} {% endfor %}</td></tr>
+        {% if source_url %}<tr><td style="width:25%">Sources</td><td style="width:75%"><a href="{{ source_url }}">{{ source_url }}</a></td></tr>{% endif %}
       </table>
     </div>
   </div>
