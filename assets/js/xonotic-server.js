@@ -17,7 +17,7 @@ function unescapeHTML(str) {
 
 
 function unescapeFontHTML(str) {
-    return str.replace(/&lt;font(.*?)&gt;/g, "<font$1>").replace(/&lt;\/font&gt;/g, "</font>");
+    return str.replace(/&lt;font(.*?)&gt;/g, function(m, g1) {return "<font" + g1.replace(/&quot;/g, '"').replace(/&#39;/g, '\'') + ">"}).replace(/&lt;\/font&gt;/g, "</font>");
 }
 
 
