@@ -165,3 +165,8 @@ body {
 a {
     color: #71a4d0;
 }
+
+code {
+    color: #b5b5b5;
+    background-color: #101317;
+}

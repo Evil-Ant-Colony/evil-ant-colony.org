@@ -11,6 +11,8 @@ Our Xonotic servers are so awesome! ^^
 - [Tournament Server](fight)
 - [Votable Server](votable)
 
+These servers collect player statistics and sends them to [https://stats.xonotic.org](https://stats.xonotic.org) if you enabled this feature. You can control the amount of data sent (and even completely turn it off) with the Xonotic settings `cl_allow_uidtracking` and `cl_allow_uid2name`. We do not store this data ourselves.
+
 ##Server Rules
 The [server admins](/contact) reserve the right to ban anyone without prior warning if found to break any of the rules or have a negative effect on the game or the players.
 
